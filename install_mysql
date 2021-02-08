@@ -1,0 +1,36 @@
+#!/bin/bash
+clear
+download () {
+echo -n "[*] Downloading Compulsary Files...."
+apt update -y > /dev/null 2>&1
+apt upgrade -y > /dev/null 2>&1
+apt install figlet ruby espeak mariadb -y > /dev/null 2>&1
+gem install lolcat -y > /dev/null 2>&1
+echo "Done"
+}
+instal () {
+echo -n "[*] Setting Up Mysql..."
+espeak "Setting Up Mysql"
+mkdir $PREFIX/etc/my.cnf.d > /dev/null 2>&1
+rm -f $PREFIX/etc/motd
+mysql_install_db > /dev/null 2>&1
+echo "mysqld_safe > /dev/null 2>&1 &; mysql; pkill mariadb;" >> $PREFIX/etc/bash.bashrc
+echo "Done"
+espeak "Done"
+echo "[!] Relaunch Termux Again!"
+espeak "Relaunch Termux Again!"
+}
+check () {
+avacom="figlet ruby espeak mysql "
+for com in $avacom
+do
+if command -v $com > /dev/null 2>&1
+then
+figlet "Tejas" | lolcat -a
+instal
+else
+download
+fi
+done
+}
+download
