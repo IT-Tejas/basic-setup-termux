@@ -28,6 +28,11 @@ check () {
 avacom="figlet ruby espeak mysql "
 for com in $avacom
 do
-if command -v $com > /dev/null 2>&1
+if ! command -v $com > /dev/null 2>&1
 then
-clear
+download
+fi
+done
+}
+check
+instal
