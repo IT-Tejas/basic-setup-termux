@@ -21,6 +21,7 @@ echo "Done"
 espeak "Done"
 echo "[!] Relaunch Termux Again!"
 espeak "Relaunch Termux Again!"
+rm -rf install_mysql
 exit 0
 }
 check () {
