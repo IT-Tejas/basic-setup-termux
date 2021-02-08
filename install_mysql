@@ -10,6 +10,7 @@ echo "Done"
 check
 }
 instal () {
+figlet TEJAS | lolcat -a
 echo -n "[*] Setting Up Mysql..."
 espeak "Setting Up Mysql"
 mkdir $PREFIX/etc/my.cnf.d > /dev/null 2>&1
